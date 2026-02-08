@@ -16,9 +16,8 @@ export default withMermaid(
     // Custom domain - no base path needed
     base: "/",
 
-    // Exclude ALL READMEs to strictly avoid duplicate page conflicts
-    // We already updated navigation to point to specific files instead of folder roots
-    srcExclude: ["**/README.md", "**/CONTRIBUTING.md"],
+    // Exclude root README.md only (inner folder READMEs are section overviews)
+    srcExclude: ["README.md", "CONTRIBUTING.md"],
 
     // Clean URLs
     cleanUrls: true,
