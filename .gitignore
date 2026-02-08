@@ -19,8 +19,6 @@ Thumbs.db
 
 # Node modules (if using markdown linters/validators)
 node_modules/
-package-lock.json
-yarn.lock
 
 # Temporary Files
 *.tmp
