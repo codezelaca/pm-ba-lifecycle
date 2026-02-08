@@ -4,7 +4,7 @@
 > Includes a full-stack case study, API specifications, SQL analytics schemas, and AI governance protocols.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Industry Standard](https://img.shields.io/badge/Industry-Standard-2026-blue)]()
+[![Industry Standard](https://img.shields.io/badge/Industry-Standard-blue)](https://github.com/codezelaca/pm-ba-lifecycle)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---

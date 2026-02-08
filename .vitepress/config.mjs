@@ -16,6 +16,9 @@ export default withMermaid(
     // Custom domain - no base path needed
     base: "/",
 
+    // Exclude root README.md only (inner folder READMEs are section overviews)
+    srcExclude: ["README.md", "CONTRIBUTING.md"],
+
     // Clean URLs
     cleanUrls: true,
 
@@ -510,10 +513,6 @@ export default withMermaid(
       theme: {
         light: "github-light",
         dark: "github-dark",
-      },
-      // Enable anchor links
-      anchor: {
-        permalink: true,
       },
     },
 
