@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
 // SEO and Branding Configuration
-const SITE_URL = "https://pmba.cca.lk";
+const SITE_URL = "https://pmba.cca.it.com";
 const SITE_TITLE = "PM & BA Lifecycle";
 const SITE_DESCRIPTION =
   "Complete Learning Resource for Product Management and Business Analysis by Codezela Career Accelerator";
@@ -16,8 +16,9 @@ export default withMermaid(
     // Custom domain - no base path needed
     base: "/",
 
-    // Exclude root README.md only (inner folder READMEs are section overviews)
-    srcExclude: ["README.md", "CONTRIBUTING.md"],
+    // Exclude ALL READMEs to strictly avoid duplicate page conflicts
+    // We already updated navigation to point to specific files instead of folder roots
+    srcExclude: ["**/README.md", "**/CONTRIBUTING.md"],
 
     // Clean URLs
     cleanUrls: true,

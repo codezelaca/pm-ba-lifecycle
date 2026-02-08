@@ -1,3 +1,10 @@
+---
+# This file is for GitHub repository display only
+# VitePress uses index.md as the homepage
+search: false
+outline: false
+---
+
 # 🎓 PM & BA Lifecycle: Professional Training Program
 
 > **A comprehensive, end-to-end framework for modern Product Management and Business Analysis**

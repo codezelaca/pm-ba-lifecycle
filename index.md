@@ -3,7 +3,7 @@ layout: doc
 title: PM & BA Lifecycle
 ---
 
-# PM & BA Lifecycle
+# PM & BA Lifecycle Documentation
 
 **Complete Learning Resource for Product Management and Business Analysis**
 
