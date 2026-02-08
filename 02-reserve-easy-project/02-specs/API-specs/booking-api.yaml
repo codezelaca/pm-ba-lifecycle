@@ -1,0 +1,618 @@
+openapi: 3.0.0
+info:
+  title: ReserveEasy Booking API
+  version: 1.0.0
+  description: |
+    REST API for creating and managing restaurant reservations.
+
+    **Base URL:** `https://api.reserveeasy.com/v1`
+
+    **Authentication:** API Key sent via `Authorization: Bearer {api_key}` header
+
+    **Rate Limiting:** 1000 requests/hour per API key
+
+  contact:
+    name: ReserveEasy API Support
+    email: api@reserveeasy.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.reserveeasy.com/v1
+    description: Production server
+  - url: https://api-staging.reserveeasy.com/v1
+    description: Staging server for testing
+
+tags:
+  - name: Bookings
+    description: Create, retrieve, update, and cancel restaurant reservations
+  - name: Restaurants
+    description: Search and retrieve restaurant information
+  - name: Availability
+    description: Check real-time table availability
+
+paths:
+  /bookings:
+    post:
+      summary: Create a new booking
+      description: Creates a new restaurant reservation. Returns booking confirmation details and sends SMS to customer.
+      operationId: createBooking
+      tags:
+        - Bookings
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - restaurant_id
+                - booking_date
+                - booking_time
+                - party_size
+                - customer
+              properties:
+                restaurant_id:
+                  type: integer
+                  description: Unique identifier of the restaurant
+                  example: 123
+                booking_date:
+                  type: string
+                  format: date
+                  description: Date of reservation (YYYY-MM-DD)
+                  example: "2026-02-15"
+                booking_time:
+                  type: string
+                  pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"
+                  description: Time of reservation in 24-hour format (HH:MM)
+                  example: "19:00"
+                party_size:
+                  type: integer
+                  minimum: 1
+                  maximum: 20
+                  description: Number of guests
+                  example: 4
+                customer:
+                  type: object
+                  required:
+                    - name
+                    - email
+                    - phone
+                  properties:
+                    name:
+                      type: string
+                      minLength: 2
+                      maxLength: 100
+                      description: Customer's full name
+                      example: "Sarah Chen"
+                    email:
+                      type: string
+                      format: email
+                      description: Customer's email address
+                      example: "sarah@example.com"
+                    phone:
+                      type: string
+                      pattern: '^\+?[1-9]\d{1,14}$'
+                      description: Customer's phone number in E.164 format
+                      example: "+15551234567"
+                special_requests:
+                  type: string
+                  maxLength: 500
+                  description: Optional special requests (e.g., dietary restrictions, seating preferences)
+                  example: "Window seat preferred. One guest has gluten allergy."
+      responses:
+        "201":
+          description: Booking created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "400":
+          description: Invalid input (missing required fields, invalid format)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              examples:
+                invalidDate:
+                  summary: Past date provided
+                  value:
+                    error:
+                      code: "INVALID_DATE"
+                      message: "Booking date must be in the future"
+                      field: "booking_date"
+                invalidPartySize:
+                  summary: Party size out of range
+                  value:
+                    error:
+                      code: "INVALID_PARTY_SIZE"
+                      message: "Party size must be between 1 and 20"
+                      field: "party_size"
+        "409":
+          description: Conflict - Table not available at requested time
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                error:
+                  code: "TABLE_UNAVAILABLE"
+                  message: "No tables available for 4 guests at 19:00 on 2026-02-15"
+                  available_times: ["18:30", "19:30", "20:00"]
+        "429":
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    get:
+      summary: List all bookings
+      description: Retrieve a paginated list of bookings. Supports filtering by status, date range, and restaurant.
+      operationId: listBookings
+      tags:
+        - Bookings
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: status
+          in: query
+          description: Filter by booking status
+          schema:
+            type: string
+            enum: [confirmed, pending, cancelled, completed, no_show]
+        - name: from_date
+          in: query
+          description: Filter bookings from this date onwards (YYYY-MM-DD)
+          schema:
+            type: string
+            format: date
+        - name: to_date
+          in: query
+          description: Filter bookings up to this date (YYYY-MM-DD)
+          schema:
+            type: string
+            format: date
+        - name: restaurant_id
+          in: query
+          description: Filter by restaurant ID
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: Page number (1-indexed)
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: limit
+          in: query
+          description: Number of results per page
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        "200":
+          description: List of bookings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Booking"
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        example: 1
+                      limit:
+                        type: integer
+                        example: 20
+                      total:
+                        type: integer
+                        example: 487
+                      pages:
+                        type: integer
+                        example: 25
+
+  /bookings/{booking_id}:
+    get:
+      summary: Retrieve a booking
+      description: Get details of a specific booking by ID
+      operationId: getBooking
+      tags:
+        - Bookings
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: booking_id
+          in: path
+          required: true
+          description: Unique booking identifier
+          schema:
+            type: string
+            example: "bk_7x3mN9pQs2"
+      responses:
+        "200":
+          description: Booking details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "404":
+          description: Booking not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                error:
+                  code: "BOOKING_NOT_FOUND"
+                  message: "No booking found with ID bk_invalid"
+
+    patch:
+      summary: Modify a booking
+      description: Update booking details (date, time, party size). Subject to availability and modification policy (2 hours before).
+      operationId: updateBooking
+      tags:
+        - Bookings
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: booking_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                booking_date:
+                  type: string
+                  format: date
+                booking_time:
+                  type: string
+                party_size:
+                  type: integer
+                  minimum: 1
+                  maximum: 20
+      responses:
+        "200":
+          description: Booking updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "400":
+          description: Invalid modification (e.g., less than 2 hours notice)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Booking not found
+        "409":
+          description: Requested time not available
+
+  /bookings/{booking_id}/cancel:
+    post:
+      summary: Cancel a booking
+      description: Cancel an existing reservation. Cancellations made >24 hours before receive full refund.
+      operationId: cancelBooking
+      tags:
+        - Bookings
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: booking_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cancellation_reason:
+                  type: string
+                  maxLength: 500
+                  example: "Change of plans"
+      responses:
+        "200":
+          description: Booking cancelled successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  booking_id:
+                    type: string
+                  status:
+                    type: string
+                    example: "cancelled"
+                  refund_amount:
+                    type: number
+                    format: float
+                    description: Amount refunded to customer (if applicable)
+                    example: 10.00
+                  message:
+                    type: string
+                    example: "Booking cancelled. Full refund will be processed within 3-5 business days."
+        "404":
+          description: Booking not found
+
+  /restaurants:
+    get:
+      summary: Search restaurants
+      description: Search for restaurants by location, cuisine, price range, etc.
+      operationId: searchRestaurants
+      tags:
+        - Restaurants
+      parameters:
+        - name: q
+          in: query
+          description: Search query (restaurant name, cuisine)
+          schema:
+            type: string
+          example: "italian"
+        - name: lat
+          in: query
+          description: Latitude for location-based search
+          schema:
+            type: number
+            format: float
+          example: 40.7589
+        - name: lng
+          in: query
+          description: Longitude for location-based search
+          schema:
+            type: number
+            format: float
+          example: -73.9851
+        - name: radius
+          in: query
+          description: Search radius in kilometers
+          schema:
+            type: number
+            default: 5
+          example: 3
+        - name: cuisine
+          in: query
+          description: Filter by cuisine type
+          schema:
+            type: string
+          example: "italian"
+        - name: price_range
+          in: query
+          description: Filter by price range (1-4, where 4 is most expensive)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 4
+      responses:
+        "200":
+          description: List of restaurants matching search criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Restaurant"
+
+  /availability:
+    get:
+      summary: Check table availability
+      description: Check if tables are available at a specific restaurant for given date, time, and party size
+      operationId: checkAvailability
+      tags:
+        - Availability
+      parameters:
+        - name: restaurant_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: party_size
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Availability information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  restaurant_id:
+                    type: integer
+                  date:
+                    type: string
+                    format: date
+                  available_times:
+                    type: array
+                    items:
+                      type: string
+                    example: ["17:00", "17:30", "18:00", "21:00", "21:30"]
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: "Use format: Bearer {api_key}"
+
+  schemas:
+    Booking:
+      type: object
+      properties:
+        booking_id:
+          type: string
+          description: Unique booking identifier
+          example: "bk_7x3mN9pQs2"
+        confirmation_code:
+          type: string
+          description: 6-character confirmation code for customers
+          example: "ABC123"
+        status:
+          type: string
+          enum: [confirmed, pending, cancelled, completed, no_show]
+          description: Current status of the booking
+          example: "confirmed"
+        restaurant:
+          type: object
+          properties:
+            id:
+              type: integer
+              example: 123
+            name:
+              type: string
+              example: "Bella Italia"
+            address:
+              type: string
+              example: "123 Main St, New York, NY 10001"
+            phone:
+              type: string
+              example: "+15551234567"
+        booking_date:
+          type: string
+          format: date
+          example: "2026-02-15"
+        booking_time:
+          type: string
+          example: "19:00"
+        party_size:
+          type: integer
+          example: 4
+        customer:
+          type: object
+          properties:
+            name:
+              type: string
+              example: "Sarah Chen"
+            email:
+              type: string
+              example: "sarah@example.com"
+            phone:
+              type: string
+              example: "+15551234567"
+        special_requests:
+          type: string
+          example: "Window seat preferred"
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when booking was created (ISO 8601)
+          example: "2026-02-08T18:30:00Z"
+        updated_at:
+          type: string
+          format: date-time
+          example: "2026-02-08T18:30:00Z"
+        links:
+          type: object
+          description: HATEOAS links for related actions
+          properties:
+            self:
+              type: string
+              example: "/api/v1/bookings/bk_7x3mN9pQs2"
+            modify:
+              type: string
+              example: "/api/v1/bookings/bk_7x3mN9pQs2"
+            cancel:
+              type: string
+              example: "/api/v1/bookings/bk_7x3mN9pQs2/cancel"
+
+    Restaurant:
+      type: object
+      properties:
+        restaurant_id:
+          type: integer
+          example: 123
+        name:
+          type: string
+          example: "Bella Italia"
+        cuisine:
+          type: string
+          example: "Italian"
+        address:
+          type: string
+          example: "123 Main St, New York, NY 10001"
+        location:
+          type: object
+          properties:
+            lat:
+              type: number
+              format: float
+              example: 40.7589
+            lng:
+              type: number
+              format: float
+              example: -73.9851
+        price_range:
+          type: integer
+          description: 1-4 scale (1=budget, 4=fine dining)
+          example: 3
+        rating:
+          type: number
+          format: float
+          example: 4.5
+        photos:
+          type: array
+          items:
+            type: string
+            format: uri
+          example: ["https://cdn.reserveeasy.com/photos/123/1.jpg"]
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Machine-readable error code
+              example: "INVALID_DATE"
+            message:
+              type: string
+              description: Human-readable error message
+              example: "Booking date must be in the future"
+            field:
+              type: string
+              description: Field that caused the error (if applicable)
+              example: "booking_date"
+            details:
+              type: object
+              description: Additional error context

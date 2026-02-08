@@ -1,0 +1,59 @@
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.project
+.settings/
+
+# Node modules (if using markdown linters/validators)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Temporary Files
+*.tmp
+*.bak
+*.log
+*.cache
+
+# Build Outputs (if generating static sites from markdown)
+dist/
+build/
+out/
+_site/
+
+# Personal Notes
+notes/
+drafts/
+TODO.md
+NOTES.md
+
+# Sensitive Information
+.env
+.env.local
+secrets/
+credentials/
+
+# Generated Diagrams (if pre-rendering)
+*.mmd.png
+*.mmd.svg
+
+# PDF Exports
+*.pdf
+
+# Office Temporary Files
+~$*.docx
+~$*.pptx
+~$*.xlsx
