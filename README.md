@@ -17,9 +17,9 @@ This is **not just documentation** - it's a complete **professional training sim
 
 ```mermaid
 graph LR
-    A[📚 Learn Theory<br/>Curriculum] --> B[🏗️ Apply to Real Project<br/>ReserveEasy]
-    B --> C[🛠️ Use Templates<br/>Toolkit]
-    C --> D[💼 Build Portfolio<br/>Career Ready]
+    A[📚 Learn Theory - Curriculum] --> B[🏗️ Apply to Real Project - ReserveEasy]
+    B --> C[🛠️ Use Templates - Toolkit]
+    C --> D[💼 Build Portfolio - Career Ready]
 
     style A fill:#e1f5ff
     style B fill:#fff4e1
@@ -106,7 +106,7 @@ Master Agile methodologies and Scrum practices used by 70%+ of tech companies.
 
 ---
 
-### [Module 3: Strategy &amp; Analysis](01-curriculum/03-strategy-analysis.md)
+### [Module 3: Strategy & Analysis](01-curriculum/03-strategy-analysis.md)
 
 **Duration:** 2 weeks | **Difficulty:** ⭐⭐⭐⭐☆
 
@@ -123,7 +123,7 @@ Develop strategic thinking and analysis skills for business problem-solving.
 
 ---
 
-### [Module 4: Data &amp; Analytics](01-curriculum/04-data-analytics.md)
+### [Module 4: Data & Analytics](01-curriculum/04-data-analytics.md)
 
 **Duration:** 2 weeks | **Difficulty:** ⭐⭐⭐⭐⭐
 
@@ -343,12 +343,12 @@ _Estimated Time: 12-16 weeks_
 
 ```mermaid
 graph LR
-    A[Week 1-2<br/>Module 1] --> B[Week 3-4<br/>Module 2]
-    B --> C[Week 5-6<br/>Module 3]
-    C --> D[Week 7-8<br/>Module 4]
-    D --> E[Week 9-10<br/>Module 5-6]
-    E --> F[Week 11-12<br/>Module 7]
-    F --> G[Week 13-16<br/>Build Portfolio]
+    A[Week 1-2 - Module 1] --> B[Week 3-4 - Module 2]
+    B --> C[Week 5-6 - Module 3]
+    C --> D[Week 7-8 - Module 4]
+    D --> E[Week 9-10 - Module 5-6]
+    E --> F[Week 11-12 - Module 7]
+    F --> G[Week 13-16 - Build Portfolio]
 ```
 
 **Weekly Commitment:** 10-15 hours

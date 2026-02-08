@@ -40,9 +40,9 @@ Think of requirements as a pyramid - each level builds on the foundation below:
 
 ```mermaid
 graph TD
-    A[Business Requirements<br/>"Why are we building this?"] --> B[User Requirements<br/>"What do users need?"]
-    B --> C[Functional Requirements<br/>"What should it do?"]
-    C --> D[Non-Functional Requirements<br/>"How well should it do it?"]
+    A[Business Requirements - Why are we building this] --> B[User Requirements - What do users need]
+    B --> C[Functional Requirements - What should it do]
+    C --> D[Non-Functional Requirements - How well should it do it]
 
     style A fill:#e1f5ff
     style B fill:#fff4e1

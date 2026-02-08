@@ -8,8 +8,8 @@
 
 ### Product Management
 
-| Book                                  | Author                  | Best For                           |
-| ------------------------------------- | ----------------------- | ---------------------------------- |
+| Book                            | Author                  | Best For                           |
+| ------------------------------- | ----------------------- | ---------------------------------- |
 | **Inspired**                    | Marty Cagan             | Product discovery, empowered teams |
 | **Continuous Discovery Habits** | Teresa Torres           | User research, opportunity mapping |
 | **The Lean Product Playbook**   | Dan Olsen               | Product-market fit framework       |
@@ -19,8 +19,8 @@
 
 ### Business Analysis
 
-| Book                                              | Author             | Best For                   |
-| ------------------------------------------------- | ------------------ | -------------------------- |
+| Book                                        | Author             | Best For                   |
+| ------------------------------------------- | ------------------ | -------------------------- |
 | **BABOK Guide**                             | IIBA               | Comprehensive BA knowledge |
 | **Business Analysis for Dummies**           | Kupe Kupersmith    | Getting started            |
 | **The Software Requirements Memory Jogger** | Ellen Gottesdiener | Quick reference            |
@@ -28,8 +28,8 @@
 
 ### Agile & Scrum
 
-| Book                                                              | Author          | Best For              |
-| ----------------------------------------------------------------- | --------------- | --------------------- |
+| Book                                                        | Author          | Best For              |
+| ----------------------------------------------------------- | --------------- | --------------------- |
 | **Scrum: The Art of Doing Twice the Work in Half the Time** | Jeff Sutherland | Scrum foundations     |
 | **The Phoenix Project**                                     | Gene Kim        | DevOps narrative      |
 | **Agile Estimating and Planning**                           | Mike Cohn       | Estimation techniques |
@@ -40,7 +40,7 @@
 
 ### PM Focused
 
-- **[Lenny&#39;s Newsletter](https://www.lennysnewsletter.com/)** - #1 product newsletter, case studies, interviews
+- **[Lenny's Newsletter](https://www.lennysnewsletter.com/)** - #1 product newsletter, case studies, interviews
 - **[Product Hunt Daily](https://www.producthunt.com/newsletter)** - New product launches
 - **[Mind the Product](https://www.mindtheproduct.com/newsletter/)** - PM community updates
 - **[Department of Product](https://www.departmentofproduct.com/)** - Curated PM content
@@ -59,8 +59,8 @@
 
 ## Podcasts
 
-| Podcast                              | Host            | Focus                  |
-| ------------------------------------ | --------------- | ---------------------- |
+| Podcast                        | Host            | Focus                  |
+| ------------------------------ | --------------- | ---------------------- |
 | **Lenny's Podcast**            | Lenny Rachitsky | PM interviews, tactics |
 | **This is Product Management** | Alpha           | PM stories             |
 | **Product Thinking**           | Melissa Perri   | Product strategy       |
@@ -74,8 +74,8 @@
 
 ### Free
 
-| Course                                                                                               | Platform       | Duration |
-| ---------------------------------------------------------------------------------------------------- | -------------- | -------- |
+| Course                                                                                                  | Platform       | Duration |
+| ------------------------------------------------------------------------------------------------------- | -------------- | -------- |
 | [Product Management Fundamentals](https://www.coursera.org/learn/uva-darden-digital-product-management) | Coursera (UVA) | 4 weeks  |
 | [Intro to SQL](https://www.khanacademy.org/computing/computer-programming/sql)                          | Khan Academy   | 5 hours  |
 | [Agile with Atlassian Jira](https://www.coursera.org/learn/agile-atlassian-jira)                        | Coursera       | 4 weeks  |
@@ -90,7 +90,7 @@
 - **[Product Hunt](https://www.producthunt.com/)** - Product launches
 - **[Mind the Product Slack](https://www.mindtheproduct.com/product-management-slack-community/)** - 100k+ members
 - **[r/ProductManagement](https://www.reddit.com/r/ProductManagement/)** - Reddit community
-- **[Lenny&#39;s Discord](https://www.lennysnewsletter.com/)** - Paid newsletter benefit
+- **[Lenny's Discord](https://www.lennysnewsletter.com/)** - Paid newsletter benefit
 
 ### Business Analysis
 
@@ -109,19 +109,19 @@
 
 ### Must-Have Skills
 
-| Tool                 | Purpose              | Learning Resource                                                   |
-| -------------------- | -------------------- | ------------------------------------------------------------------- |
+| Tool           | Purpose              | Learning Resource                                                      |
+| -------------- | -------------------- | ---------------------------------------------------------------------- |
 | **Jira**       | Issue tracking       | [Atlassian University](https://university.atlassian.com/)              |
 | **Confluence** | Documentation        | [Atlassian Docs](https://www.atlassian.com/software/confluence/guides) |
 | **Figma**      | Design collaboration | [Figma Learn](https://www.figma.com/resources/learn-design/)           |
 | **SQL**        | Data analysis        | [SQLBolt](https://sqlbolt.com/)                                        |
-|                      |                      |                                                                     |
+| **Amplitude**  | Product analytics    | [Amplitude Academy](https://academy.amplitude.com/)                    |
 | **Miro**       | Whiteboarding        | [Miro Academy](https://academy.miro.com/)                              |
 
 ### Nice-to-Have
 
-| Tool               | Purpose               |
-| ------------------ | --------------------- |
+| Tool         | Purpose               |
+| ------------ | --------------------- |
 | **Notion**   | All-in-one workspace  |
 | **Linear**   | Modern issue tracking |
 | **Mixpanel** | Event analytics       |
@@ -142,17 +142,17 @@
 
 ### Business Analysis
 
-| Certification     | Provider | Cost | Value                        |
-| ----------------- | -------- | ---- | ---------------------------- |
-| **CBAP**    | IIBA     | $450 | Gold standard for senior BAs |
-| **CCBA**    | IIBA     | $350 | For mid-level BAs            |
-| **ECBA**    | IIBA     | $250 | Entry-level                  |
-| **PMI-PBA** | PMI      | $555 | If you already have PMP      |
+| Certification | Provider | Cost | Value                        |
+| ------------- | -------- | ---- | ---------------------------- |
+| **CBAP**      | IIBA     | $450 | Gold standard for senior BAs |
+| **CCBA**      | IIBA     | $350 | For mid-level BAs            |
+| **ECBA**      | IIBA     | $250 | Entry-level                  |
+| **PMI-PBA**   | PMI      | $555 | If you already have PMP      |
 
 ### Agile
 
-| Certification        | Provider       | Cost | Value                           |
-| -------------------- | -------------- | ---- | ------------------------------- |
+| Certification  | Provider       | Cost | Value                           |
+| -------------- | -------------- | ---- | ------------------------------- |
 | **CSM**        | Scrum Alliance | $500 | 2-day course, widely recognized |
 | **CSPO**       | Scrum Alliance | $500 | For product owners              |
 | **PSM I**      | Scrum.org      | $150 | Self-study, rigorous exam       |
@@ -162,11 +162,10 @@
 
 ## YouTube Channels
 
-| Channel                                                 | Focus                 |
-| ------------------------------------------------------- | --------------------- |
+| Channel                                                    | Focus                 |
+| ---------------------------------------------------------- | --------------------- |
 | [Exponent](https://www.youtube.com/@tryexponent)           | PM interview prep     |
 | [Product School](https://www.youtube.com/@ProductSchoolSF) | PM talks, webinars    |
-|                                                         |                       |
 | [Fireship](https://www.youtube.com/@Fireship)              | Tech concepts (quick) |
 | [TechLead](https://www.youtube.com/@TechLead)              | Tech career content   |
 
@@ -192,8 +191,8 @@
 
 ## Conferences
 
-| Conference                                   | Focus                | When                 |
-| -------------------------------------------- | -------------------- | -------------------- |
+| Conference                             | Focus                | When                 |
+| -------------------------------------- | -------------------- | -------------------- |
 | **Mind the Product**                   | Product management   | October (London, SF) |
 | **ProductCon**                         | Product School event | Quarterly            |
 | **BBC (Building Business Capability)** | Business analysis    | November             |
@@ -203,8 +202,8 @@
 
 ## Practice Platforms
 
-| Platform                                                                                                                     | Purpose                   |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| Platform                                                                                                                        | Purpose                   |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
 | [LeetCode](https://leetcode.com/)                                                                                               | SQL practice              |
 | [HackerRank](https://www.hackerrank.com/)                                                                                       | SQL, technical skills     |
 | [Exponent](https://www.tryexponent.com/)                                                                                        | PM interview practice     |
@@ -212,6 +211,5 @@
 | [Blind 75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) | For technical PM roles    |
 
 ---
-
 
 [⬅️ Back to Main](README.md) | [Exercises →](exercises.md)

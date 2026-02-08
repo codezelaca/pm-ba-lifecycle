@@ -34,9 +34,9 @@ Quality isn't just QA's job - it's everyone's responsibility. This module teache
 
 ```mermaid
 graph TD
-    A[Manual/Exploratory<br/>5% of tests] --> B[UI/E2E Tests<br/>15% of tests]
-    B --> C[Integration Tests<br/>30% of tests]
-    C --> D[Unit Tests<br/>50% of tests]
+    A[Manual/Exploratory - 5% of tests] --> B[UI/E2E Tests - 15% of tests]
+    B --> C[Integration Tests - 30% of tests]
+    C --> D[Unit Tests - 50% of tests]
 
     style A fill:#ff6b6b
     style B fill:#ffd93d

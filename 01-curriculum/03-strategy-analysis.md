@@ -66,8 +66,8 @@ graph TB
 
 | Block                      | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| **Customer Segments**      | 1) Diners (urban professionals, 25-45) <br/> 2) Restaurants (casual dining, 20-100 seats)     |
-| **Value Propositions**     | Diners: Book in 60 sec, guaranteed seating <br/> Restaurants: Reduce no-shows from 30% to <5% |
+| **Customer Segments**      | 1) Diners (urban professionals, 25-45)  -  2) Restaurants (casual dining, 20-100 seats)     |
+| **Value Propositions**     | Diners: Book in 60 sec, guaranteed seating  -  Restaurants: Reduce no-shows from 30% to <5% |
 | **Channels**               | Web app (mobile-responsive), restaurant partner outreach, social media ads                    |
 | **Customer Relationships** | Self-service platform, automated SMS, dedicated restaurant success team                       |
 | **Revenue Streams**        | 10% commission on completed bookings                                                          |
@@ -104,7 +104,7 @@ Analyzes industry attractiveness and competitive intensity.
 
 ```mermaid
 mindmap
-  root((Restaurant<br/>Reservation<br/>Market))
+  root((Restaurant - Reservation - Market))
     Threat of New Entrants
       Low barriers technical
       High barriers network effects
@@ -217,7 +217,7 @@ sequenceDiagram
     Diner->>Host: Provide name & phone
     Host->>Paper Book: Write booking
     Host->>Diner: "See you then!" (verbal only)
-    Note over Diner: No confirmation<br/>Anxiety!
+    Note over Diner: No confirmation - Anxiety!
 ```
 
 **Pain Points:**
@@ -251,7 +251,7 @@ sequenceDiagram
     SMS Gateway-->>Diner: SMS within 30 sec
     App->>Restaurant Dashboard: New booking notification
     App-->>Diner: Confirmation page
-    Note over Diner: Peace of mind!<br/>Proof of booking
+    Note over Diner: Peace of mind! - Proof of booking
 ```
 
 **Improvements:**

@@ -91,10 +91,10 @@ Also called **Pirate Metrics** (AARRR = "Arrr!"). Tracks users through 5 stages:
 
 ```mermaid
 graph LR
-    A[Acquisition<br/>How users find you] --> B[Activation<br/>First good experience]
-    B --> C[Retention<br/>Come back]
-    C --> D[Revenue<br/>Pay us]
-    D --> E[Referral<br/>Tell others]
+    A[Acquisition - How users find you] --> B[Activation - First good experience]
+    B --> C[Retention - Come back]
+    C --> D[Revenue - Pay us]
+    D --> E[Referral - Tell others]
 
     style A fill:#e1f5ff
     style B fill:#fff4e1
@@ -321,8 +321,8 @@ ORDER BY bookings DESC;
 
 ```mermaid
 graph LR
-    A[users table<br/>user_id, name, email] ---|user_id| B[bookings table<br/>booking_id, user_id, restaurant_id]
-    B ---|restaurant_id| C[restaurants table<br/>restaurant_id, name, cuisine]
+    A[users table - user_id, name, email] ---|user_id| B[bookings table - booking_id, user_id, restaurant_id]
+    B ---|restaurant_id| C[restaurants table - restaurant_id, name, cuisine]
 ```
 
 ```sql

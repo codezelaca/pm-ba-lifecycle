@@ -25,22 +25,22 @@ Desired Outcome (North Star)
 
 ```mermaid
 graph TD
-    Outcome[Desired Outcome:<br/>Maximize completed bookings<br/>Revenue per restaurant]
+    Outcome[Desired Outcome: - Maximize completed bookings - Revenue per restaurant]
 
-    Outcome --> Opp1[Opportunity 1:<br/>Diners abandon booking flow<br/>20% drop-off]
-    Outcome --> Opp2[Opportunity 2:<br/>Restaurants lose revenue to no-shows<br/>30% no-show rate]
-    Outcome --> Opp3[Opportunity 3:<br/>Booking modifications are difficult<br/>15% cancellation rate]
+    Outcome --> Opp1[Opportunity 1: - Diners abandon booking flow - 20% drop-off]
+    Outcome --> Opp2[Opportunity 2: - Restaurants lose revenue to no-shows - 30% no-show rate]
+    Outcome --> Opp3[Opportunity 3: - Booking modifications are difficult - 15% cancellation rate]
 
-    Opp1 --> Sol1A[Solution: 60-second booking flow<br/>Pre-filled forms for returning users]
-    Opp1 --> Sol1B[Solution: Guest checkout<br/>No account required]
-    Opp1 --> Sol1C[Solution: Apple Pay / Google Pay<br/>One-tap payment]
+    Opp1 --> Sol1A[Solution: 60-second booking flow - Pre-filled forms for returning users]
+    Opp1 --> Sol1B[Solution: Guest checkout - No account required]
+    Opp1 --> Sol1C[Solution: Apple Pay / Google Pay - One-tap payment]
 
-    Opp2 --> Sol2A[Solution: Deposit system<br/>$10/person for parties 6+]
-    Opp2 --> Sol2B[Solution: 24-hour SMS reminder<br/>Reduce forgetfulness]
-    Opp2 --> Sol2C[Solution: Easy cancellation<br/>Free up tables for walk-ins]
+    Opp2 --> Sol2A[Solution: Deposit system - $10/person for parties 6+]
+    Opp2 --> Sol2B[Solution: 24-hour SMS reminder - Reduce forgetfulness]
+    Opp2 --> Sol2C[Solution: Easy cancellation - Free up tables for walk-ins]
 
-    Opp3 --> Sol3A[Solution: Self-serve modification<br/>Change time/party size in app]
-    Opp3 --> Sol3B[Solution: Flexible cancellation policy<br/>Full refund if >24 hours notice]
+    Opp3 --> Sol3A[Solution: Self-serve modification - Change time/party size in app]
+    Opp3 --> Sol3B[Solution: Flexible cancellation policy - Full refund if >24 hours notice]
 
     style Outcome fill:#e1f5ff,stroke:#0066cc,stroke-width:3px
     style Opp1 fill:#fff4e1,stroke:#ff9900,stroke-width:2px

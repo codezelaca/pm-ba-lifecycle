@@ -238,8 +238,8 @@ notion.so/yourname/product-portfolio
 
 ## Tools to Showcase in Portfolio
 
-| Category                | Tools to Mention                                   |
-| ----------------------- | -------------------------------------------------- |
+| Category          | Tools to Mention                                   |
+| ----------------- | -------------------------------------------------- |
 | **Analytics**     | SQL, Mixpanel, Amplitude, Google Analytics, Looker |
 | **Design**        | Figma (link mockups), Miro (link roadmaps)         |
 | **Project Mgmt**  | Jira, Linear, Asana                                |
@@ -264,8 +264,8 @@ notion.so/yourname/product-portfolio
 
 **Great PM Portfolios:**
 
-- [Lenny Rachitsky&#39;s Blog](https://www.lennysnewsletter.com) - PM best practices, case studies
-- [Jackie Bavaro&#39;s Portfolio](https://jackiebavaro.com) - Asana PM, clear case studies
+- [Lenny Rachitsky's Blog](https://www.lennysnewsletter.com) - PM best practices, case studies
+- [Jackie Bavaro's Portfolio](https://jackiebavaro.com) - Asana PM, clear case studies
 - [Ken Norton essays](https://www.bringthedonuts.com) - Google PM, thought leadership
 
 ---

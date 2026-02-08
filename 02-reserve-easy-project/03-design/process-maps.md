@@ -36,7 +36,7 @@ sequenceDiagram
         D->>H: Provide name & phone number
         H->>B: Write booking manually
         H->>D: "See you then!" (verbal only)
-        Note over D: No confirmation<br/>Anxiety!
+        Note over D: No confirmation - Anxiety!
     else Table Not Available
         H->>D: "Sorry, fully booked"
         D->>P: Call next restaurant
@@ -93,9 +93,9 @@ sequenceDiagram
         RD-->>RD: New booking alert
     end
 
-    A-->>D: Confirmation page<br/>Code: ABC123
+    A-->>D: Confirmation page - Code: ABC123
 
-    Note over D: Instant proof of booking<br/>Peace of mind!
+    Note over D: Instant proof of booking - Peace of mind!
 ```
 
 **Improvements:**
@@ -113,27 +113,27 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    Start([Diner clicks<br/>'Cancel Reservation']) --> Check{When is<br/>the booking?}
+    Start([Diner clicks Cancel Reservation]) --> Check{When is the booking?}
 
-    Check -->|> 24 hours| FullRefund[Full refund<br/>if deposit paid]
-    Check -->|2-24 hours| PartialRefund[50% refund<br/>if deposit paid]
+    Check -->|> 24 hours| FullRefund[Full refund - if deposit paid]
+    Check -->|2-24 hours| PartialRefund[50% refund - if deposit paid]
     Check -->|< 2 hours| NoRefund[No refund]
 
-    FullRefund --> UpdateDB[Update booking<br/>status = 'cancelled']
+    FullRefund --> UpdateDB[Update booking status to cancelled]
     PartialRefund --> UpdateDB
     NoRefund --> UpdateDB
 
-    UpdateDB --> SendSMS[Send SMS<br/>'Cancellation confirmed']
-    SendSMS --> NotifyRestaurant[Notify restaurant<br/>via dashboard]
+    UpdateDB --> SendSMS[Send SMS Cancellation confirmed]
+    SendSMS --> NotifyRestaurant[Notify restaurant - via dashboard]
 
-    FullRefund --> ProcessRefund{Deposit<br/>paid?}
+    FullRefund --> ProcessRefund{Deposit - paid?}
     PartialRefund --> ProcessRefund
     NoRefund --> ProcessRefund
 
-    ProcessRefund -->|Yes| InitiateRefund[Stripe refund API<br/>3-5 business days]
+    ProcessRefund -->|Yes| InitiateRefund[Stripe refund API - 3-5 business days]
     ProcessRefund -->|No| Skip[Skip refund]
 
-    InitiateRefund --> End([Cancellation<br/>complete])
+    InitiateRefund --> End([Cancellation - complete])
     Skip --> End
     NotifyRestaurant --> End
 
@@ -159,8 +159,8 @@ stateDiagram-v2
     [*] --> Confirmed: Booking created
 
     Confirmed --> InProgress: Booking time arrives
-    InProgress --> Completed: Diner shows up<br/>(Host marks 'Seated')
-    InProgress --> NoShow: Diner doesn't arrive<br/>(15 min past booking time)
+    InProgress --> Completed: Diner shows up, Host marks Seated
+    InProgress --> NoShow: Diner doesnt arrive, 15 min past booking time
 
     Completed --> RefundDeposit: If deposit paid
     RefundDeposit --> [*]

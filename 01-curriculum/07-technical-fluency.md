@@ -561,9 +561,9 @@ sequenceDiagram
     participant Twilio as SMS Gateway (Twilio)
     participant User as Customer's Phone
 
-    App->>Twilio: POST /sms/send<br/>{to: "+1-555-123", message: "Booking confirmed"}
+    App->>Twilio: POST /sms/send - {to: "+1-555-123", message: "Booking confirmed"}
     Twilio->>User: SMS delivered
-    Twilio->>App: POST /webhooks/sms-status<br/>{status: "delivered", message_id: "SM123"}
+    Twilio->>App: POST /webhooks/sms-status - {status: "delivered", message_id: "SM123"}
     App->>App: Update booking record: sms_delivered = true
 ```
 

@@ -46,10 +46,10 @@ Learn the **ceremonies, artifacts, and rhythms** of modern product teams. This m
 
 ```mermaid
 graph LR
-    A[Sprint Planning<br/>4 hours] --> B[Daily Standups<br/>15 min/day]
-    B --> C[Development Work<br/>10 working days]
-    C --> D[Sprint Review<br/>2 hours]
-    D --> E[Sprint Retro<br/>1.5 hours]
+    A[Sprint Planning - 4 hours] --> B[Daily Standups - 15 min/day]
+    B --> C[Development Work - 10 working days]
+    C --> D[Sprint Review - 2 hours]
+    D --> E[Sprint Retro - 1.5 hours]
     E --> A
 
     style A fill:#e1f5ff
