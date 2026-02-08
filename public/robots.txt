@@ -1,0 +1,15 @@
+# PM & BA Lifecycle Documentation Site
+# by Codezela Career Accelerator
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://codezelaca.github.io/pm-ba-lifecycle/sitemap.xml
+
+# Crawl delay (optional, for politeness)
+Crawl-delay: 1
+
+# Disallow admin/config paths
+Disallow: /.vitepress/
