@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
 // SEO and Branding Configuration
-const SITE_URL = "https://codezelaca.github.io/pm-ba-lifecycle";
+const SITE_URL = "https://pmba.cca.lk";
 const SITE_TITLE = "PM & BA Lifecycle";
 const SITE_DESCRIPTION =
   "Complete Learning Resource for Product Management and Business Analysis by Codezela Career Accelerator";
@@ -13,8 +13,8 @@ export default withMermaid(
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
 
-    // GitHub Pages base path
-    base: "/pm-ba-lifecycle/",
+    // Custom domain - no base path needed
+    base: "/",
 
     // Clean URLs
     cleanUrls: true,
@@ -36,7 +36,7 @@ export default withMermaid(
           rel: "icon",
           type: "image/png",
           sizes: "32x32",
-          href: "/pm-ba-lifecycle/logo.png",
+          href: "/logo.png",
         },
       ],
       [
@@ -45,7 +45,7 @@ export default withMermaid(
           rel: "icon",
           type: "image/png",
           sizes: "16x16",
-          href: "/pm-ba-lifecycle/logo.png",
+          href: "/logo.png",
         },
       ],
       [
@@ -53,7 +53,7 @@ export default withMermaid(
         {
           rel: "apple-touch-icon",
           sizes: "180x180",
-          href: "/pm-ba-lifecycle/logo.png",
+          href: "/logo.png",
         },
       ],
 
@@ -179,10 +179,16 @@ export default withMermaid(
       // Navigation bar
       nav: [
         { text: "Home", link: "/" },
-        { text: "Curriculum", link: "/01-curriculum/" },
-        { text: "ReserveEasy", link: "/02-reserve-easy-project/" },
-        { text: "Toolkit", link: "/03-toolkit/" },
-        { text: "Career", link: "/04-career-portfolio/" },
+        {
+          text: "Curriculum",
+          link: "/01-curriculum/01-requirements-engineering",
+        },
+        {
+          text: "ReserveEasy",
+          link: "/02-reserve-easy-project/01-discovery/market-analysis",
+        },
+        { text: "Toolkit", link: "/03-toolkit/ai-prompts" },
+        { text: "Career", link: "/04-career-portfolio/pm-portfolio-guide" },
         {
           text: "Resources",
           items: [
@@ -211,7 +217,6 @@ export default withMermaid(
             text: "📚 Curriculum",
             collapsed: false,
             items: [
-              { text: "Overview", link: "/01-curriculum/" },
               {
                 text: "1. Requirements Engineering",
                 link: "/01-curriculum/01-requirements-engineering",
@@ -246,7 +251,6 @@ export default withMermaid(
             text: "🏗️ ReserveEasy Project",
             collapsed: false,
             items: [
-              { text: "Project Overview", link: "/02-reserve-easy-project/" },
               {
                 text: "Discovery",
                 collapsed: true,
@@ -341,7 +345,6 @@ export default withMermaid(
             text: "🛠️ Toolkit",
             collapsed: false,
             items: [
-              { text: "Overview", link: "/03-toolkit/" },
               { text: "AI Prompts", link: "/03-toolkit/ai-prompts" },
               {
                 text: "Templates",
@@ -393,7 +396,6 @@ export default withMermaid(
             text: "💼 Career Portfolio",
             collapsed: false,
             items: [
-              { text: "Overview", link: "/04-career-portfolio/" },
               {
                 text: "PM Portfolio Guide",
                 link: "/04-career-portfolio/pm-portfolio-guide",

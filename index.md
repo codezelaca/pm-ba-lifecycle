@@ -1,122 +1,90 @@
 ---
-layout: home
-
-hero:
-  name: "PM & BA Lifecycle"
-  text: "Complete Learning Resource"
-  tagline: From Theory to Portfolio-Ready Skills — by Codezela Career Accelerator
-  image:
-    src: /logo.png
-    alt: PM & BA Lifecycle
-  actions:
-    - theme: brand
-      text: Start Learning →
-      link: /01-curriculum/
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/codezelaca/pm-ba-lifecycle
-
-features:
-  - icon: 📚
-    title: 7-Module Curriculum
-    details: Master Requirements Engineering, Agile, Strategy, Data Analytics, Product Process, QA, and Technical Fluency with industry-standard frameworks.
-    link: /01-curriculum/
-    linkText: Explore Curriculum
-  - icon: 🏗️
-    title: ReserveEasy Project
-    details: Real-world simulation with BRDs, FSDs, OpenAPI specs, SQL queries, and test plans—all portfolio-ready artifacts.
-    link: /02-reserve-easy-project/
-    linkText: View Project
-  - icon: 🛠️
-    title: Ready-to-Use Toolkit
-    details: Professional templates, checklists, and AI prompts for BRDs, FSDs, user stories, and quality assurance.
-    link: /03-toolkit/
-    linkText: Get Templates
-  - icon: 💼
-    title: Career Preparation
-    details: Portfolio guides, interview prep (STAR, CIRCLES), resume templates, and LinkedIn optimization for PM and BA roles.
-    link: /04-career-portfolio/
-    linkText: Prepare for Jobs
+layout: doc
+title: PM & BA Lifecycle
 ---
 
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
-  --vp-home-hero-image-filter: blur(44px);
-}
+# PM & BA Lifecycle
 
-.VPHero .image-bg {
-  background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
-}
+**Complete Learning Resource for Product Management and Business Analysis**
 
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
-}
-</style>
-
-## Quick Start Guide
-
-| Your Goal              | Where to Start                                                                   |
-| ---------------------- | -------------------------------------------------------------------------------- |
-| 🆕 **New to PM/BA**    | [Module 1: Requirements Engineering](/01-curriculum/01-requirements-engineering) |
-| 📖 **Know the basics** | [ReserveEasy Project](/02-reserve-easy-project/) for hands-on practice           |
-| 📝 **Need templates**  | [Toolkit](/03-toolkit/) with ready-to-use documents                              |
-| 💼 **Job hunting**     | [Career Portfolio](/04-career-portfolio/) guides                                 |
+_by Codezela Career Accelerator_
 
 ---
 
-## What Makes This Different
+## Quick Navigation
 
-<div class="features-grid">
-
-| Traditional Learning   | This Repository                                        |
-| ---------------------- | ------------------------------------------------------ |
-| ❌ Theory only         | ✅ Theory + real project simulation                    |
-| ❌ Generic examples    | ✅ Industry-standard artifacts (OpenAPI, SQL, Mermaid) |
-| ❌ No portfolio pieces | ✅ Portfolio-ready documents                           |
-| ❌ Outdated content    | ✅ Modern PM/BA practices with AI tools                |
-
-</div>
+| Section                                                                         | Description                                          |
+| ------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| [📚 Curriculum](/01-curriculum/01-requirements-engineering)                     | 7 comprehensive learning modules                     |
+| [🏗️ ReserveEasy Project](/02-reserve-easy-project/01-discovery/market-analysis) | Real-world simulation with portfolio-ready artifacts |
+| [🛠️ Toolkit](/03-toolkit/ai-prompts)                                            | Templates, checklists, and AI prompts                |
+| [💼 Career Portfolio](/04-career-portfolio/pm-portfolio-guide)                  | Interview prep and job search guides                 |
 
 ---
 
 ## What's Inside
 
-```
-📦 pm-ba-lifecycle
-├── 📚 01-curriculum/        # 7 comprehensive learning modules
-├── 🏗️ 02-reserve-easy/      # Complete project simulation
-│   ├── discovery/           # Market analysis, personas, opportunity trees
-│   ├── specs/               # BRD, FSD, OpenAPI YAML
-│   ├── design/              # BPMN process maps
-│   ├── delivery/            # Backlog, sprints
-│   ├── analytics/           # SQL queries, North Star metrics
-│   └── qa/                  # Test plans, bug reports
-├── 🛠️ 03-toolkit/           # Templates & checklists
-└── 💼 04-career-portfolio/  # Interview prep & resume guides
-```
+### 📚 Curriculum Modules
+
+1. [Requirements Engineering](/01-curriculum/01-requirements-engineering) - Requirements Pyramid, Gap Analysis
+2. [Agile Execution](/01-curriculum/02-agile-execution) - Scrum, Kanban, User Stories
+3. [Strategy & Analysis](/01-curriculum/03-strategy-analysis) - SWOT, Porter's Five Forces
+4. [Data & Analytics](/01-curriculum/04-data-analytics) - SQL, Metrics, A/B Testing
+5. [Product Process](/01-curriculum/05-product-process) - Discovery, Delivery, OKRs
+6. [Quality Assurance](/01-curriculum/06-quality-assurance) - Test Plans, Bug Reports
+7. [Technical Fluency](/01-curriculum/07-technical-fluency) - APIs, Databases, Architecture
+
+### 🏗️ ReserveEasy Project
+
+A complete restaurant reservation platform simulation with:
+
+- **Discovery**: [Market Analysis](/02-reserve-easy-project/01-discovery/market-analysis), [User Personas](/02-reserve-easy-project/01-discovery/user-personas), [Opportunity Tree](/02-reserve-easy-project/01-discovery/opportunity-tree)
+- **Specs**: [BRD](/02-reserve-easy-project/02-specs/BRD-v1.0), [FSD](/02-reserve-easy-project/02-specs/FSD-booking-mod), [API Specs](/02-reserve-easy-project/02-specs/API-specs/webhooks)
+- **Delivery**: [Product Backlog](/02-reserve-easy-project/04-delivery/product-backlog), [Sprint Goals](/02-reserve-easy-project/04-delivery/sprints/sprint-15-goal)
+- **Analytics**: [North Star Metric](/02-reserve-easy-project/05-analytics/north-star-metric), SQL Queries
+- **QA**: [Test Plan](/02-reserve-easy-project/06-qa/master-test-plan), [Test Cases](/02-reserve-easy-project/06-qa/test-cases/TC-001-guest-booking)
+
+### 🛠️ Toolkit
+
+- [AI Prompts](/03-toolkit/ai-prompts) - 15 ready-to-use prompts for PM/BA work
+- [BRD Template](/03-toolkit/templates/brd-template)
+- [FSD Template](/03-toolkit/templates/fsd-template)
+- [User Stories Library](/03-toolkit/templates/user-stories-library)
+- [Definition of Ready](/03-toolkit/checklists/definition-of-ready)
+- [Definition of Done](/03-toolkit/checklists/definition-of-done)
+
+### 💼 Career Preparation
+
+- [PM Portfolio Guide](/04-career-portfolio/pm-portfolio-guide)
+- [BA Portfolio Guide](/04-career-portfolio/ba-portfolio-guide)
+- [Interview Preparation](/04-career-portfolio/interview-preparation) - STAR, CIRCLES, Fermi
+- [Resume Templates](/04-career-portfolio/resume-templates)
+- [LinkedIn Optimization](/04-career-portfolio/linkedin-optimization)
 
 ---
 
-<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-radius: 12px;">
-  <p style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">📊 Repository Stats</p>
-  <p style="font-size: 1.1rem; color: var(--vp-c-text-2);">
-    <strong>55 files</strong> • <strong>7 modules</strong> • <strong>15,000+ lines</strong> of learning content
-  </p>
-</div>
+## Quick Start
+
+| Your Goal          | Start Here                                                                       |
+| ------------------ | -------------------------------------------------------------------------------- |
+| 🆕 New to PM/BA    | [Module 1: Requirements Engineering](/01-curriculum/01-requirements-engineering) |
+| 📖 Know the basics | [ReserveEasy Project](/02-reserve-easy-project/01-discovery/market-analysis)     |
+| 📝 Need templates  | [Toolkit - AI Prompts](/03-toolkit/ai-prompts)                                   |
+| 💼 Job hunting     | [Interview Preparation](/04-career-portfolio/interview-preparation)              |
 
 ---
 
-<div style="text-align: center; margin-top: 2rem; color: var(--vp-c-text-2);">
-  <p>Built with ❤️ by <a href="https://github.com/codezelaca" target="_blank"><strong>Codezela Career Accelerator</strong></a></p>
+## Additional Resources
+
+- [Learning Paths](/01-curriculum/learning-paths) - Structured study plans
+- [Glossary](/glossary) - PM/BA terminology
+- [Practice Exercises](/exercises) - Hands-on practice problems
+- [External Resources](/resources) - Books, podcasts, courses
+
+---
+
+<div style="text-align: center; margin-top: 2rem; padding: 1rem; background: var(--vp-c-bg-soft); border-radius: 8px;">
+  <strong>55 files</strong> • <strong>7 modules</strong> • <strong>15,000+ lines</strong> of content
+  <br><br>
+  <a href="https://github.com/codezelaca/pm-ba-lifecycle" target="_blank">View on GitHub →</a>
 </div>
